@@ -20,5 +20,7 @@ Copy `env` to `.env` and tailor for your app, specifically the baseURL
 and any database settings.
 
 - `env.default` to `.env`
-- `app/Config/App.php.default` remove `.default`
-- `app/Config/Security.php.default` remove `.default`
+- `app/Config/App.php.default` edit and remove `.default`
+- `app/Config/Security.php.default` edit and remove `.default`
+
+If in production run `composer --no-dev`.

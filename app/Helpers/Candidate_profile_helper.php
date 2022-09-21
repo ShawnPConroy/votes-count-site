@@ -115,8 +115,8 @@ function candidateProfileInfoLi($type, $data) {
     }
     
     // create li
-    $result = '<i class="fa '.$icon.'" aria-label="'.$aria.'"></i> '.$text;
-    if (false && isset($link)) {
+    $result = '<i class="fa '.$icon.' fa-fw" aria-label="'.$aria.'"></i> '.$text;
+    if (isset($link)) {
         $result = '<a href="'.$link.'">'.$result.'</a>';
     }
     $result = "<li>".$result."</li>\n";
