@@ -18,6 +18,7 @@ class Election extends BaseController
     public function info($year, $level, $region) {
         $data['election'] = yaml_parse_file(VC_DATA_PATH."municipal/{$year}-{$region}.yaml");
         $data['survey'] = yaml_parse_file(VC_DATA_PATH."municipal/{$year}-survey-questions.yaml");
+        $data['responses'] = yaml_parse_file(VC_DATA_PATH."municipal/{$year}-{$region}-responses.yaml");
 
         if ($data['election']) {
             $data['title'] = $data['election']['Meta']['Name'];

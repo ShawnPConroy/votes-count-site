@@ -43,7 +43,7 @@ foreach($election as $seatName => $seat) {
             echo $seat['Description']; // $app->parsedown->text($seat->intro);
         }
     $first = true;
-    foreach ($seat['Candidates'] as $candidate) { 
+    foreach ($seat['Candidates'] as $slug=>$candidate) { 
 ?>
         <h4><?php echo $candidate['Name']; ?></strong> <?php /* echo $candidate['Party']; */ ?></h4>
 
@@ -57,14 +57,12 @@ foreach($election as $seatName => $seat) {
                     echo "<ul class=\"fa-ul\">\n";
                     foreach($candidate['Info'] as $name=>$datum) {
                         if (is_array($datum)) {
-                            $temp = "";
                             foreach($datum as $subdatum) {
-                                $temp .= $subdatum.'<br/>';
+                                echo "\t\t\t\t\t".candidateProfileInfoLi($name, $subdatum);
                             }
-                            $datum = $temp;
+                        } else {
+                            echo "\t\t\t\t\t".candidateProfileInfoLi($name, $datum);
                         }
-                        // echo "<li>{$name}: {$datum}</li>\n";
-                        echo "\t\t\t\t\t".candidateProfileInfoLi($name, $datum);
                     }
                     echo "\t\t\t\t</ul>\n";
                 }
@@ -72,25 +70,21 @@ foreach($election as $seatName => $seat) {
             </div>
             <div class="col">
             <?php
-            if (isset($candidate['Survey'])) {
-                foreach($candidate['Survey'] as $questionId => $answer) {
-                    // This does not show the actual question
-                    // $survey[$eId]['part goes here?'][$questionId]
-                    // Needs and ID section?
-                    // $survey[$eId]['Meta']['Question Index'][$questionId]
+            if (isset($responses[$slug])) {
+                foreach($responses[$slug] as $question_slug => $answer) {
                     // This does not properly deal clarifications, I thought the issue was bullet points being processed wrong but it's clarifications
                     // if (is_array($answer)) $answer = implode("\n<br><br>\n", $answer);
-                    echo "<details class=\"card\"><summary>{$survey['Meta']['Question Index'][$questionId]['Label']}</summary>";
-                    // echo "<details class=\"card\"><summary>{$questionId}</summary>";
-                    
-                    // Current
-                    // var_dump($survey);
-                    // die();
-
-
-
-                    // var_dump($answer);
-                    if (!is_array($answer)) echo $answer;
+                    echo "<details class=\"card\"><summary>{$survey['Meta']['Question Index'][$question_slug]['Label']}</summary>";
+                    if (!is_array($answer)) {
+                        if (isset($survey['Meta']['Question Index'][$question_slug]['Responses'])) {
+                            echo $survey['Meta']['Question Index'][$question_slug]['Responses'][$answer];
+                        }
+                        else {
+                            echo $answer;
+                        }
+                    } else {
+                        Echo "Data error. Please report this.";
+                    }
                     echo "</details>\n";
                 }
             }   
