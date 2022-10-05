@@ -1,19 +1,10 @@
 <?php
 function candidateProfileInfoLi($type, $data) {
     switch ($type) {
-        case 'Email':
-            $link = 'mailto:'.$data;
-            $icon = 'fa-envelope';
-            $aria = 'email';
-            $text = $data;
-            break;
-        case 'Phone':
-            $icon = 'fa-phone';
-            $aria = 'phone number';
-            $text = $data;
-            break;
         case 'Election Day':
-            $icon = 'fa-check';
+        case 'Election Ends':
+        case 'Online Voting Starts':
+            $icon = 'fa-calendar-check-o';
             $aria = '';
             $text = $type .": ". $data;
             break;
@@ -28,9 +19,22 @@ function candidateProfileInfoLi($type, $data) {
             $text = $data;
             break;
         case 'City Hall Voting':
+        case 'Voting Center Days':
             $icon = 'fa-institution';
             $aria = '';
             $text = $type .": ". $data;
+            break;
+        case 'Email':
+            $link = 'mailto:'.$data;
+            $icon = 'fa-envelope';
+            $aria = 'email';
+            $text = $data;
+            break;
+        case 'Phone':
+            $icon = 'fa-phone';
+            $aria = 'phone number';
+            $text = $data;
+            $link = 'tel:'.$data;
             break;
         case 'Fax':
             $icon = 'fa-fax';
@@ -67,7 +71,7 @@ function candidateProfileInfoLi($type, $data) {
         case 'Facebook':
             $icon = 'fa-facebook';
             $aria = "Facebook";
-            $text = $data;
+            $text = getUsername($data);
             $link = $data;
             break;
         case 'Instagram':

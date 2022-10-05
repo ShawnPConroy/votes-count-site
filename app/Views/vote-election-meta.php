@@ -1,5 +1,6 @@
 <section>
 <?php
+helper("Candidate_profile_helper");
 if (!empty($election['Results Link'])) {
 ?>
 	<p><a href="<?php echo $election['Meta']['Results Link']; ?>">View Election Results (unofficial)</a></p>
@@ -16,7 +17,7 @@ if (!empty($election['Results Link'])) {
 
 <div class="row">
 	<div class="col">
-		<h2><i class="fa fa-calendar-check-o"></i> Election Dates</h2>
+		<h2><i class="fa fa-calendar"></i> Election Dates</h2>
 		<ul class="fa-ul">
 			<?php 
 			foreach ($election['Meta']['Dates'] as $name=>$value) {
@@ -27,8 +28,7 @@ if (!empty($election['Results Link'])) {
 					}
 					$value = $dates."</ul>";
 				}
-				
-				echo "<li>{$name}: {$value}</li>";
+				echo candidateProfileInfoLi($name, $value);
 			}
 			
 			
@@ -53,7 +53,7 @@ if (!empty($election['Results Link'])) {
 		if (!empty($election['Meta']['Links'])) {
 		?>
 			<h2><i class="fa fa-link"></i> Links</h2>
-			<ul class="fa-ul">
+			<ul>
 				<?php
 				foreach ($election['Meta']['Links'] as $name => $value) {
 					echo "<li><a href=\"$value\">$name</a></li>";
