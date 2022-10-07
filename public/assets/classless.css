@@ -11,23 +11,21 @@ Table of Contents:
 /* 1. Theme Settings ––––––––––––––––––––-–––––––––––––– */
 
 
-html{
-	--navpos: absolute;
-	--width: 684px;
-	--rem:  18px;
-	--font-p: 1em/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
-"Helvetica Neue", Arial, "Noto Sans", sans-serif;
-	--font-h: 1em/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, 
-"Helvetica Neue", Arial, "Noto Sans", sans-serif;
-	--font-c: .8em/1.4 monospace;
-	--ornament: "";
+:root, html[data-theme='light'] {
+	--rem: 12pt;
+	--width: 50rem;
+	--navpos: absolute;  /* fixed | absolute */
+	--font-p: 1em/1.7  'Open Sans', 'DejaVu Sans', FreeSans, Helvetica, sans-serif;
+	--font-h: .9em/1.5 'Open Sans', 'DejaVu Sans', FreeSans, Helvetica, sans-serif;
+	--font-c: .9em/1.4 'DejaVu Sans Mono', monospace;
 	--border: 1px solid var(--cmed);
+	--ornament: "‹‹‹ ›››";
 	/* foreground   | background color */
-	--cfg:   #4a4a4a; --cbg: #f9f9f9;
-	--cdark: #4a4a4a; --clight: #f1f1f1;
-	--cmed: #d1d1d1;
-	--clink: #1d7484;
-	--cemph: #982c61; --cemphbg: #982c6110;
+	--cfg:   #433;    --cbg:    #fff;
+	--cdark: #888;    --clight: #f5f6f7;
+	--cmed:  #d1d1d1;
+	--clink: #07c;
+	--cemph: #088;    --cemphbg: #0881;
 }
 
 
