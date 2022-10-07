@@ -11,7 +11,7 @@ helper("Candidate_profile_helper");
 <?php
 $surveyNote = "";
 $trusteeReminder = "";
-$note_for_all_offices = "<div class=\"card hint\"><p><span class=\"fa fa-info\"></span> Mayor, Councillor, Trustee Reminder</p><p>We vote for mayor for the city, councillor for our ward, and for our ward. Be sure to look up all three. Candidate profiles at the <a href=\"https://www.barrietoday.com/municipal-election\">Barrie Today election page</a> and <a href=\"https://www.d17teachers.com/uploads/1/0/1/0/10104838/osstf_endorsed_trustee_candidate_list_october_2022_municipal_election_final.pdf\">endorsed trustee candidates from a teacher's union (PDF)</a>. Contact me if you find additional voting guides.</p></div>";
+$note_for_all_offices = "<div class=\"card hint\"><p><span class=\"fa fa-info\"></span> Mayor, Councillor, Trustee Reminder</p><p>We vote for mayor for the city, councillor for our ward, and for our ward. Be sure to look up all three. Candidate profiles at the <a href=\"https://www.barrietoday.com/municipal-election\">Barrie Today election page</a> and <a href=\"https://www.d17teachers.com/uploads/1/0/1/0/10104838/osstf_endorsed_trustee_candidate_list_october_2022_municipal_election_final.pdf\">endorsed trustee candidates from a teacher's union (PDF)</a>. <a href=\"https://feedback.votescount.ca/\">Contact me</a> if you find additional voting guides or corrections.</p></div>";
 
 unset($candidates);
 foreach($election as $seatName => $seat) {
