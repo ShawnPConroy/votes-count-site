@@ -21,7 +21,7 @@ class Election extends BaseController
         $data['responses'] = yaml_parse_file(VC_DATA_PATH."municipal/{$year}-{$region}-responses.yaml");
 
         if ($data['election']) {
-            $data['title'] = $data['election']['Meta']['Name'];
+            $data['title'] = $data['election']['Meta']['Name'].' info';
 
             // return view('vote-election', $data);
 

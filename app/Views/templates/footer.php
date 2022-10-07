@@ -7,8 +7,10 @@
         This website hopes to grow through public data to help people vote across Canada
         and encourage people who are close to voting but need a little information about
         the process or their local candidates.</p>
+    
     <p><a href="https://feedback.votescount.ca/">Suggestions, corrections and feedback</a> is welcome.</p>
-    <p><em>Made with 💖 in 2022.</em></p>
+    
+    <p><em>Made with 💖 in 2022.</em> Thumbnail image CC by <a href="https://commons.wikimedia.org/wiki/File:Barrie_Waterfront_Panorama_June_4th_2021.jpg">Duckdave</a>.</p>
 </footer>
 </body>
 </html>
