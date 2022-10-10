@@ -10,7 +10,7 @@ helper("Candidate_profile_helper");
     <h2 class="major"><span class="fa fa-list"></span> Candidate Listing</h2>
 <?php
 $surveyNote = "";
-$trusteeReminder = "";
+$trusteeReminder = "<p>You can read the Simcoe County school board's article about trustees: <a href=\"https://elections.ontarioschooltrustees.org/WhatDoTrusteesDo/SchoolBoardTrustees.aspx\">Who are they? Why are they important?</a>";
 $note_for_all_offices = "<div class=\"card hint\"><p><span class=\"fa fa-info\"></span> Mayor, Councillor, Trustee Reminder</p><p>Be sure to look up candidates for mayor, councillor for your ward, and schoolboard trustee for your ward. Also see <a href=\"#profiles-debates-endorsements\">profiles, debates &amp; endorsements</a>.</div>";
 
 unset($candidates);
