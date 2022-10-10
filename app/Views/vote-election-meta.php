@@ -17,7 +17,7 @@ if (!empty($election['Results Link'])) {
 
 <div class="row">
 	<div class="col">
-		<h2><i class="fa fa-calendar"></i> Election Dates</h2>
+		<h3><i class="fa fa-calendar"></i> Election Dates</h3>
 		<ul class="fa-ul">
 			<?php 
 			foreach ($election['Meta']['Dates'] as $name=>$value) {
@@ -35,7 +35,7 @@ if (!empty($election['Results Link'])) {
 			?>
 		</ul>
 
-		<h2><i class="fa fa-map-marker"></i> Voting Locations</h2>
+		<h3><i class="fa fa-map-marker"></i> Voting Locations</h3>
 		
 		<p>You can <a href="<?php echo $election['Meta']['Links']['Voting Locations Link']; ?>">view the list of all voting locations</a>. There is one per ward, but usually you can vote at any voting location. Most voting is expected to be online.</p>
 	</div>
@@ -43,7 +43,7 @@ if (!empty($election['Results Link'])) {
 
 
 	<div class="col">
-		<h2><i class="fa fa-id-card-o"></i> Voter ID</a></h2>
+		<h3><i class="fa fa-id-card-o"></i> Voter ID</a></h3>
 	
 		<p>You must have a piece of ID with your name and address on it. Ontario driver&#8217;s license, photo Health Card or Photo Card. <a href="<?php echo $election['Meta']['Links']['Voter ID Link']; ?>">See the full list of accepted ID (PDF)</a>.</p>
 		
@@ -52,7 +52,7 @@ if (!empty($election['Results Link'])) {
 		<?php
 		if (!empty($election['Meta']['Links'])) {
 		?>
-			<h2><i class="fa fa-link"></i> Links</h2>
+			<h3><i class="fa fa-link"></i> Links</h3>
 			<ul>
 				<?php
 				foreach ($election['Meta']['Links'] as $name => $value) {
@@ -68,4 +68,51 @@ if (!empty($election['Results Link'])) {
 	</div>
 </div>
 				
+</section>
+
+
+<section id="profiles-debates-endorsements">
+	<h2><span class="fa fa-certificate"></span> Profiles, Debates &amp; Endorsements</h2>
+	<p><a href="https://feedback.votescount.ca/">Contact me</a> if you find additional profiles, debates, endorsements/voting guides or other corrections.</p>
+<div class="row">
+	
+	<?php if (!empty($election['Meta']['Profile Links'])) { ?>
+		<div class="col-4">
+		<h3><i class="fa fa-user-circle"></i> Profiles</h3>
+		<ul>
+			<?php
+			foreach ($election['Meta']['Profile Links'] as $name => $value) {
+				echo "<li><a href=\"$value\">$name</a></li>";
+			}
+			?>
+		</ul>
+		</div>
+	
+	<?php }
+	if (!empty($election['Meta']['Debate Links'])) { ?>
+	<div class="col-4">
+		<h3><i class="fa fa-comments-o "></i> Debates</h3>
+		<ul>
+			<?php
+			foreach ($election['Meta']['Debate Links'] as $name => $value) {
+				echo "<li><a href=\"$value\">$name</a></li>";
+			}
+			?>
+		</ul>
+	</div>
+	<?php }
+	if (!empty($election['Meta']['Endorsements'])) { ?>
+	<div class="col-4">
+		<h3><i class="fa fa-star"></i> Endorsements</h3>
+		<ul>
+			<?php
+			foreach ($election['Meta']['Endorsements'] as $name => $value) {
+				echo "<li><a href=\"$value\">$name</a></li>";
+			}
+			?>
+		</ul>
+	</div>
+	<?php } ?>
+</div>
+
 </section>

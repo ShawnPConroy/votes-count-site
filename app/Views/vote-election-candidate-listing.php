@@ -11,7 +11,7 @@ helper("Candidate_profile_helper");
 <?php
 $surveyNote = "";
 $trusteeReminder = "";
-$note_for_all_offices = "<div class=\"card hint\"><p><span class=\"fa fa-info\"></span> Mayor, Councillor, Trustee Reminder</p><p>We vote for mayor for the city, councillor for our ward, and for our ward. Be sure to look up all three. Candidate profiles at the <a href=\"https://www.barrietoday.com/municipal-election\">Barrie Today election page</a>. See the <a href=\"https://www.facebook.com/LGBarrie/videos/1126475414928399\">Green Living Barrie Mayoral Debate (Facebook Video)</a> and <a href=\"https://www.d17teachers.com/uploads/1/0/1/0/10104838/osstf_endorsed_trustee_candidate_list_october_2022_municipal_election_final.pdf\">endorsed trustee candidates from a teacher's union (PDF)</a>. <a href=\"https://feedback.votescount.ca/\">Contact me</a> if you find additional voting guides or corrections.</p></div>";
+$note_for_all_offices = "<div class=\"card hint\"><p><span class=\"fa fa-info\"></span> Mayor, Councillor, Trustee Reminder</p><p>Be sure to look up candidates for mayor, councillor for your ward, and schoolboard trustee for your ward. Also see <a href=\"#profiles-debates-endorsements\">profiles, debates &amp; endorsements</a>.</div>";
 
 unset($candidates);
 foreach($election as $seatName => $seat) {
@@ -38,8 +38,6 @@ foreach($election as $seatName => $seat) {
 
 */
 
-echo $note_for_all_offices;
-
 foreach($election as $seatName => $seat) {
     if ($seatName == 'Meta') continue;
 ?>
@@ -50,7 +48,7 @@ foreach($election as $seatName => $seat) {
         if (!empty($seat['Description'])) {
             echo $seat['Description']."."; // $app->parsedown->text($seat->intro);
         }
-        echo $note_for_all_offices;
+        echo "<aside>{$note_for_all_offices}</aside>";
         echo $trusteeReminder;
     $first = true;
     foreach ($seat['Candidates'] as $slug=>$candidate) { 
@@ -113,5 +111,7 @@ foreach($election as $seatName => $seat) {
     ?></details><?php
     /* echo $sectionsList; */
 } // endforeach $page->election (seat)
+
+
 ?>
 </section>
