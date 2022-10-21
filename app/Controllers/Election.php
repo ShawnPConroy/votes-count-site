@@ -10,9 +10,9 @@ class Election extends BaseController
         $data['elections'] = yaml_parse_file(MUNICIPAL_ELECTIONS_FILE);
         
         return
-        view(VC_THEME.'/header', $data)
+        view($_ENV['VC_THEME'].'/header', $data)
         . view('vote-list-of-elections', $data)
-        . view(VC_THEME.'/footer');
+        . view($_ENV['VC_THEME'].'/footer');
     }
     
     public function info($year, $level, $region) {
@@ -27,18 +27,18 @@ class Election extends BaseController
             // return view('vote-election', $data);
 
             return
-                view(VC_THEME.'/header', $data)
+                view($_ENV['VC_THEME'].'/header', $data)
                 . ($data['election']['Meta']['Overview'] ?
                     view('vote-election-meta', $data) : '' )
                 // . view('vote-election-results.php')
                 . ($data['election']['Meta']['Listing'] ?
                     view('vote-election-candidate-listing') : '' )
-                . view(VC_THEME.'/footer', $data);
+                . view($_ENV['VC_THEME'].'/footer', $data);
         } else {
             $data['title'] = '404 Election not found';
-            return view(VC_THEME.'/header', $data)
-                . view(VC_THEME.'/errors/html/error_404')
-                . view(VC_THEME.'/footer', $data);
+            return view($_ENV['VC_THEME'].'/header', $data)
+                . view($_ENV['VC_THEME'].'/errors/html/error_404')
+                . view($_ENV['VC_THEME'].'/footer', $data);
         }
         
         return Election::view("2018-municipal");
