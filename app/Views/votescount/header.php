@@ -3,11 +3,7 @@
 <head>
     <title><?= esc($title) ?> - 🗳️ Votes Count</title>
     <meta name="description" content="Barrie election links: candidate links, profiles, debates, endorsements. Everything you need to make an informed vote.">
-    <meta
-  property="og:description"
-  content="The Mozilla Developer Network (MDN) provides
-information about Open Web technologies including HTML, CSS, and APIs for both Web sites
-and HTML Apps." />
+    <meta property="og:description" content="Barrie election links: candidate links, profiles, debates, endorsements. Everything you need to make an informed vote." />
     <meta property="og:title" content="<?= esc($title) ?>" />
     <meta name="twitter:title" content="<?= esc($title) ?>" />
     <meta property="og:image" content="/assets/votes-count-barrie-og-2022.jpg" />

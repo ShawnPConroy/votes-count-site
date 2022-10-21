@@ -3,6 +3,13 @@
 
 define('VC_DATA_PATH', '../../utils/data/');
 //define('VC_DATA_PATH', '../../utils/data_dev/');
+
+if (strpos($_SERVER["HTTP_HOST"], "votingsucks.ca") !== false) {
+    define('VC_THEME', 'votingsucks');
+} else {
+    define('VC_THEME', 'votescount');
+}
+
 define('SURVEY_QUESTIONS_FILE', VC_DATA_PATH.'candidate-survey.yaml');
 define('MUNICIPAL_ELECTIONS_FILE', VC_DATA_PATH.'vote-municipal.yaml');
 define('MUNICIPAL_CANDIDATES_2018', VC_DATA_PATH.'2018-municipal-candidate.csv');

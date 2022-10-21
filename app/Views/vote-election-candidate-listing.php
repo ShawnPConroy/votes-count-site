@@ -49,7 +49,7 @@ foreach($election as $seatName => $seat) {
             echo $seat['Description']."."; // $app->parsedown->text($seat->intro);
         }
         echo "<aside>{$note_for_all_offices}</aside>";
-        echo $trusteeReminder;
+        if (strstr($seat['Name'], "Trustee")) echo $trusteeReminder;
     $first = true;
     foreach ($seat['Candidates'] as $slug=>$candidate) { 
 ?>
