@@ -1,7 +1,7 @@
 <?php
 
 
-define('VC_DATA_PATH', '../../utils/data/');
+define('VC_DATA_PATH', '../../data/');
 //define('VC_DATA_PATH', '../../utils/data_dev/');
 
 if (strpos($_SERVER["HTTP_HOST"], "votingsucks.ca") !== false) {
